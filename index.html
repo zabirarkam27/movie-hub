@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,43 +38,11 @@
   </style>
 </head>
 <body>
-   <!-- <h2>Audio and Video Tracks</h2>
+    <h2>Audio and Video Tracks</h2>
     <audio controls src="assets/media/audios/farm_sound.mp3">Nature sound</audio><br>
     <video controls width="300px" src="assets/media/videos/microscope.mp4"></video><br>
     <video controls width="300px" src="assets/media/vedios/happyBirthDay.mp4" muted></video>
-   
-
-    <div class="video-container">
-      <div class="video-item">
-          <h3>The Beach House (2022)</h3>
-          <iframe src="https://geo.dailymotion.com/player.html?video=x8m2i71" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="video-item">
-          <h3>Cold Fusion (2011)</h3>
-          <iframe src="https://geo.dailymotion.com/player.html?video=x8ngal5" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="video-item">
-          <h3>Pleasure (2021)</h3>
-          <iframe src="https://geo.dailymotion.com/player.html?video=x956z5i" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="video-item">
-          <h3>2 Birds (2008)</h3>
-          <iframe src="https://geo.dailymotion.com/player.html?video=x8sjr9e" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="video-item">
-          <h3>Part Time Wife (2022)</h3>
-          <iframe src="https://geo.dailymotion.com/player.html?video=x8m61tx" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="video-item">
-          <h3>Rathnam (2024)</h3>
-          <iframe src="https://geo.dailymotion.com/player.html?video=x96a6tc" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>-->
  
-
-
-
-
 
     <div>
       <div class="video-container">
@@ -96,5 +64,137 @@
         </div>
     </div>
     </div>
+</body>
+</html>-->
+
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Video Grid with Sidebar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Grid layout for main content and sidebar */
+        .layout {
+            display: grid;
+            grid-template-columns: 250px 1fr; /* Sidebar + Content */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            height: 100vh;
+            position: fixed;
+        }
+
+        .sidebar a {
+            color: white;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Video grid layout */
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-left: 250px; /* To account for the sidebar */
+        }
+
+        .video-item {
+            text-align: center;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 200px;
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            .layout {
+                grid-template-columns: 1fr; /* Full width on small screens */
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+            }
+
+            .video-container {
+                margin-left: 0; /* Remove the sidebar margin */
+            }
+
+            .video-item iframe {
+                height: 180px; /* Adjust height for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-item iframe {
+                height: 150px; /* Further adjust iframe size for small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <a href="#hubba-part1">Hubba (2024) Part-1</a>
+        <a href="#hubba-part2">Hubba (2024) Part-2</a>
+        <a href="#broker">The Broker (2021)</a>
+        <a href="#high-jinn">High Jinn (2020)</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="video-container">
+        <div class="video-item" id="hubba-part1">
+            <h3>Hubba (2024) Part-1</h3>
+            <iframe src="https://geo.dailymotion.com/player.html?video=x8s6j80" frameborder="5px" allowfullscreen></iframe>
+        </div>
+        <div class="video-item" id="hubba-part2">
+            <h3>Hubba (2024) Part-2</h3>
+            <iframe src="https://geo.dailymotion.com/player.html?video=x8s6jpa" frameborder="5px" allowfullscreen></iframe>
+        </div>
+        <div class="video-item" id="broker">
+            <h3>The Broker (2021)</h3>
+            <iframe src="https://geo.dailymotion.com/player.html?video=x8byv9t" frameborder="5px" allowfullscreen></iframe>
+        </div>
+        <div class="video-item" id="high-jinn">
+            <h3>High Jinn (2020)</h3>
+            <iframe src="https://geo.dailymotion.com/player.html?video=x7wnn7y" frameborder="5px" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
